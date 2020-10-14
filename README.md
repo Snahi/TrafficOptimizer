@@ -20,7 +20,7 @@ This component is responsible for the user interface of this program. It is writ
 In order to use this software you must use the Windows operating system. You can find the executable (TrafficOptimizerUI.exe) in the 'executable' directory. Then in order to run the optimization you will need to specify the optimization parameters and select the optimized model. For testing purposes you can use one of the provided models in the 'model_examples' directory. At this moment there is no tutorial for creating your own model files. Currently the user interface is available only in Polish.
 
 # License
-Copyright © 2020 Szymon Niemczyk
+Copyright © 2020 Szymon Niemczyk  
 You cannot use this code in your own projects with no author's permission. You are allowed to use the executable program for non-commercial purposes only.
 
 # Libraries
