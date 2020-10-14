@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalTimeEvaluator" xml:space="preserve">
+    <value>Nadmiarowy czas</value>
+  </data>
+  <data name="AdvancedModel" xml:space="preserve">
+    <value>Model zaawansowany</value>
+  </data>
+  <data name="AvgTimeEvaluator" xml:space="preserve">
+    <value>Średni czas</value>
+  </data>
+  <data name="CantGetErrCode" xml:space="preserve">
+    <value>Nie udało się uzykać rezultatu optymalizacji</value>
+  </data>
+  <data name="CantGetProgress" xml:space="preserve">
+    <value>Nie udało się odczytać postępu optymalizacji</value>
+  </data>
+  <data name="CantLoadOptimization" xml:space="preserve">
+    <value>Nie udało się załadować optymalizacji</value>
+  </data>
+  <data name="CantPause" xml:space="preserve">
+    <value>Nie udało się wstrzymać optymalizacji</value>
+  </data>
+  <data name="CantPlay" xml:space="preserve">
+    <value>Nie udało się wznowić optymalizacji</value>
+  </data>
+  <data name="CantReadResult" xml:space="preserve">
+    <value>Nie udało się odczytać pliku</value>
+  </data>
+  <data name="CantSaveCurrResult" xml:space="preserve">
+    <value>Nie udało się zapisać aktualnego wyniku</value>
+  </data>
+  <data name="CantStop" xml:space="preserve">
+    <value>Nie udało się zatrzymać optymalizacji</value>
+  </data>
+  <data name="CurrentOptimizationModel" xml:space="preserve">
+    <value>Optymalizacja: </value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>Wymagana lista elementów nie zawiera żadnego</value>
+  </data>
+  <data name="ErrCodeNotSet" xml:space="preserve">
+    <value>Nie udało się ustawić kodu błędu</value>
+  </data>
+  <data name="ErrCodeSaveErr" xml:space="preserve">
+    <value>Nie udało się zapisać wyniku optymalizacji</value>
+  </data>
+  <data name="ErrCodeUnexpErr" xml:space="preserve">
+    <value>Wystąpił niespodziewany błąd podczas optymalizacji</value>
+  </data>
+  <data name="ErrIsFinished" xml:space="preserve">
+    <value>Nie udało się sprawdzić czy optymalizacja została zakończona</value>
+  </data>
+  <data name="ErrObligatoryField" xml:space="preserve">
+    <value>To pole nie może być puste</value>
+  </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>Kod błędu</value>
+  </data>
+  <data name="ErrorLine" xml:space="preserve">
+    <value>Błąd wystąpił w lini</value>
+  </data>
+  <data name="ErrPrepareOptimization" xml:space="preserve">
+    <value>Podczas uruchamiania optymalizacji wystąpił błąd</value>
+  </data>
+  <data name="ErrRunOptimization" xml:space="preserve">
+    <value>Podczas optymalizacji wystąpił błąd</value>
+  </data>
+  <data name="ErrWrongValue" xml:space="preserve">
+    <value>Niewłaściwa wartość</value>
+  </data>
+  <data name="Generation" xml:space="preserve">
+    <value>Generacja</value>
+  </data>
+  <data name="GreenAndRedNotSpecified" xml:space="preserve">
+    <value>Sekcja &lt;green&gt; lub &lt;red&gt; nie została znaleziona</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>godzin</value>
+  </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Plik jest w złym formacie</value>
+  </data>
+  <data name="InvalidRoute" xml:space="preserve">
+    <value>Trasa jest nieprawidłowa</value>
+  </data>
+  <data name="LightsFromOtherSystem" xml:space="preserve">
+    <value>Światła zostały zdefiniowane w innym systemie świateł</value>
+  </data>
+  <data name="LightsInGreenAndRed" xml:space="preserve">
+    <value>Światła nie mogą być zielone i czerwone jednocześnie</value>
+  </data>
+  <data name="LSHADE" xml:space="preserve">
+    <value>LSHADE</value>
+  </data>
+  <data name="LSHADEWGD" xml:space="preserve">
+    <value>LSHADEWGD</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>minut</value>
+  </data>
+  <data name="MissingAttribute" xml:space="preserve">
+    <value>Wymagany atrybut nie został znaleziony</value>
+  </data>
+  <data name="NonUnqId" xml:space="preserve">
+    <value>Identyfikator nie jest unikatowy</value>
+  </data>
+  <data name="NoSuchLights" xml:space="preserve">
+    <value>Nie ma takich świateł</value>
+  </data>
+  <data name="NoSuchReferencedItem" xml:space="preserve">
+    <value>Element do którego wystąpiło odwołanie nie istnieje</value>
+  </data>
+  <data name="NotAllLightsInGroup" xml:space="preserve">
+    <value>Nie wszystkie światła z danego systemu świateł zostały umieszczone w grupie świateł</value>
+  </data>
+  <data name="NumOfEvaluations" xml:space="preserve">
+    <value>Liczba ewaluacji</value>
+  </data>
+  <data name="OptimizationFinished" xml:space="preserve">
+    <value>Zakończono optymalizację</value>
+  </data>
+  <data name="RecorderResultAndStats" xml:space="preserve">
+    <value>Wynik + statystyki</value>
+  </data>
+  <data name="RecorderResultOnly" xml:space="preserve">
+    <value>Wynik</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Wynik </value>
+  </data>
+  <data name="RoadReferencedTwice" xml:space="preserve">
+    <value>Istnieje już odniesienie do tej drogi w innym elementcie &lt;connector&gt;</value>
+  </data>
+  <data name="RouteWithNoGenerator" xml:space="preserve">
+    <value>Nie wszystkie trasy są połączone z generatorem</value>
+  </data>
+  <data name="SaveCurrentResultSuccess" xml:space="preserve">
+    <value>Zapisano!</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>sekund</value>
+  </data>
+  <data name="SectionNotSpecified" xml:space="preserve">
+    <value>Wymagana sekcja nie została znaleziona</value>
+  </data>
+  <data name="SimplifiedModel" xml:space="preserve">
+    <value>Model uproszczony</value>
+  </data>
+  <data name="StopOptiFirst" xml:space="preserve">
+    <value>Optymalizacja nie została zakończona. Jeżeli nie chcesz utracić wyniku musisz kliknąć przycisk stop lub poczekać do zakończenia optymalizacji aby było możliwe wyłączenie programu. Jeżeli nie zależy Ci na wyniku, to możesz zakończyć optymalizację zamykając główne okno programu (menu startowe).</value>
+  </data>
+  <data name="TimeSeconds" xml:space="preserve">
+    <value>Czas [sekundy]</value>
+  </data>
+  <data name="UncoveredRoads" xml:space="preserve">
+    <value>Istnieje przynajmniej jedna droga, która nie jest uwzględniona w żadnej trasie</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Wystąpił nieznany błąd</value>
+  </data>
+  <data name="WrongAttribute" xml:space="preserve">
+    <value>Atrybut ma niewłaściwą wartość</value>
+  </data>
+</root>

@@ -1,0 +1,588 @@
+<!--
+                                          | \/  |     |     |
+                                          | 200 |           |\
+                                          |     |     |       \
+                                          |     |           |  \
+                                          |     |     |         \
+                                          |     |           |   |
+                                          |     |     |         | SlipRoad
+                                          |     |           |   |
+                                          |     |     |     |\  \ 
+                                          |     |           | \  \   
+                                          |     |     |     |  \  \----------------------------------|
+                                       _  |     |           |   \                                    |
+                                    40| | |     |     |     |  _ ------------------------------| 302 |  ___
+                                      |_| |     | 120   121 | |___|41                          | /\  | |___|50
+------------------------------------------|     | /\  | /\  |----------------------------------|     |-------------------------------------------------------------
+<-                         102       CompoundGate <-     	                <- 401    GradeSeparatedLightsGate                                             400 <-
+------------------------------------------|  \/ |  _  |     |----------------------------------|     |-------------------------------------------------------------
+                                          | 201 | | |       | junction 4                       |     | _ junction 5
+                                          |     | |_| |     |                                  |     || |
+                                          |     |  42       |                                  |     ||_|51
+------------------------------------------|     |     |     |                                  |     |
+<-                                              |           |                                  |     |
+------------------------------------------------|     |     |                                  |     |
+                                                |           |                                  | 301 |
+                                                |     |     |                                __| /\  |__
+                                                | 101   111 |                               /           \
+                           ___                  | /\  |  /\ |                              /      ___    \
+--------------------------|   |------------------            -------------------------------     |   |    ---------------------------------------------------------
+ -> 1                     |   | 2               ConflictGate   -> 3                              |   |       -> 4
+--------------------------|___|------------------            -------------------------------     |___|    ---------------------------------------------------------
+                      AlwaysOpenGate            |           | junction 2                    \    		  / junction 3
+                        junction1               |     |     |                                \___     ___/ Roundabout
+                                                |           |                                   |     |
+												|     |     |                                   |     |
+                                                | 100   110 |                                   | 300 |
+												| /\  | /\  |                                   |  /\ |
+									            MultilaneRoad
+
+Route 1: 
+	1 -> 2 -> 3 -> 4
+Route 2: 
+	100 -> 101 -> 102
+Route 3:
+	400 -> 401 -> 102
+Route 4:
+	100 -> 101 -> 120
+Route 5:
+	110 -> 111 -> 121
+Route 6:
+	110 -> 111 -> 121 -> 120
+Route 7:
+	200 -> 201
+Route 8:
+	300 -> 301 -> 302 -> 121
+
+-->
+
+
+
+<junctions>
+
+	<junction id="1">		
+		<inputs>
+			<!-- for road 1 -->
+			<input id="1">
+				<always_open_gate id="1"/>
+			</input>
+		</inputs>
+	</junction>
+	
+	<junction id="2">
+		<inputs>
+			<!-- for road 2 -->
+			<input id="2">
+				<conflict_gate id="2">
+					<conflict start="70.0" conflict_pos="100.0" duration="2.0">
+						<conflict_road id="100"/>
+					</conflict>
+					<conflict start="70.0" conflict_pos="100.0" duration="2.0">
+						<conflict_road id="110"/>
+					</conflict>
+				</conflict_gate>
+			</input>
+			
+			<!-- for road 100 -->
+			<input id="100">
+				<always_open_gate id="100"/>
+			</input>
+			
+			<!-- for road 110 -->
+			<input id="110">
+				<always_open_gate id="110"/>
+			</input>
+		</inputs>
+	</junction>
+	
+	<roundabout id="3" length="20" speed="5.0">
+		<inputs>
+			<!-- for road 3 -->
+			<input id="3">
+				<roundabout_gate id="3" position="15.0"/>
+			</input>
+			
+			<!-- for road 300 -->
+			<input id="300">
+				<roundabout_gate id="300" position="10.0"/>
+			</input>
+			
+		</inputs>
+		
+		<outputs>
+			<!-- to road 4 -->
+			<output position="5.0">
+				<always_open_gate id="34"/>
+			</output>
+			
+			<!-- to road 301 -->
+			<output position="0.0">
+				<always_open_gate id="300301"/>
+			</output>
+		</outputs>
+	</roundabout>
+	
+	<junction id="4">
+		<lights_systems>
+			<lights_system id="4">
+				<lights id="40"/>
+				<lights id="41"/>
+				<lights id="42"/>
+				
+				<lights_group id="40" min_duration="20.0"
+					max_duration="60.0">
+					<green>
+						<lights id="41"/>
+					</green>
+					<red>
+						<lights id="40"/>
+						<lights id="42"/>
+					</red>
+				</lights_group>
+				
+				<lights_group id="41" min_duration="20.0"
+					max_duration="60.0">
+					<green>
+						<lights id="40"/>
+						<lights id="42"/>
+					</green>
+					<red>
+						<lights id="41"/>
+					</red>
+				</lights_group>
+				
+			</lights_system>
+		</lights_systems>
+		
+		<inputs>
+			<!-- for road 101 -->
+			<input id="101">
+				<!-- to 102 -->
+				<conflict_gate id="1010">
+					<conflict start="960.0" conflict_pos="1000.0" duration="2.0">
+						<conflict_road id="200"/>
+					</conflict>
+				</conflict_gate>
+				
+				<lights_gate id="1011" lights="42"/>
+				
+				<compound_gate id="1012">
+					<component_gate id="1010"/>
+					<component_gate id="1011"/>
+				</compound_gate>
+				
+				<!-- to 120 -->
+				<lights_gate id="1013" lights="42"/>
+			</input>
+			
+			<!-- for road 111 -->
+			<input id="111">
+				<lights_gate id="1110" lights="42"/>
+			</input>
+			
+			<!-- for road 200 -->
+			<input id="200">
+				<lights_gate id="200" lights="40"/>
+			</input>
+			
+			<!-- for road 401 -->
+			<input id="401">
+				<lights_gate id="401" lights="41"/>
+			</input>
+		</inputs>
+	</junction>
+	
+	<junction id="5">
+		<lights_systems>
+			<lights_system id="5">
+				<lights id="50"/>
+				<lights id="51"/>
+				
+				<lights_group id="50" min_duration="20.0"
+					max_duration="60.0">
+					<green>
+						<lights id="50"/>
+					</green>
+					<red>
+						<lights id="51"/>
+					</red>
+				</lights_group>
+				
+				<lights_group id="51" min_duration="20.0"
+					max_duration="60.0">
+					<green>
+						<lights id="51"/>
+					</green>
+					<red>
+						<lights id="50"/>
+					</red>
+				</lights_group>
+				
+			</lights_system>
+		</lights_systems>
+		
+		<inputs>
+			<!-- for road 301 -->
+			<input id="301">
+				<lights_gate id="3010" lights="51"/>
+			</input>
+			
+			<!-- for road 400 -->
+			<input id="400">
+				<lights_gate id="400" lights="50"/>
+			</input>
+		</inputs>
+	</junction>
+	
+</junctions>
+
+
+<generators>
+	<uniform_generator id="1" cars_per_period="5" period="100"
+		template_car="1"/>
+		
+	<uniform_generator id="100" cars_per_period="3" period="100"
+		template_car="2">	
+		<uniform_generator cars_per_period="3" period="100"
+			template_car="4"/>
+	</uniform_generator>
+		
+	<uniform_generator id="110" cars_per_period="3" period="100"
+		template_car="5">
+		<uniform_generator cars_per_period="3" period="100"
+			template_car="6"/>
+	</uniform_generator>
+		
+	<uniform_generator id="400" cars_per_period="5" period="100"
+		template_car="3"/>
+		
+	<uniform_generator id="200" cars_per_period="3" period="100"
+		template_car="7"/>
+		
+	<uniform_generator id="300" cars_per_period="6" period="100"
+		template_car="8"/>
+		
+</generators>
+
+
+<roads>
+	<initial_road id="1" generator="1" junction_input="1" length="100.0">
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_road>
+	
+	<road id="2" junction_input="2" length="100">
+		<gates>
+			<gate id="1"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</road>
+	
+	<road id="3" junction_input="3" length="100">
+		<gates>
+			<gate id="2"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</road>
+	
+	<final_road id="4" length="100">
+		<gates>
+			<gate id="34"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</final_road>
+	
+		
+	<initial_multilane_road length="100.0">
+		<lanes>
+			<lane id="100" generator="100" junction_input="100"/>
+			<lane id="110" generator="110" junction_input="110"/>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_multilane_road>
+	
+	<multilane_road length="500">
+		<lanes>
+			<lane id="101" junction_input="101">
+				<gates>
+					<gate id="100"/>
+				</gates>
+			</lane>
+			<lane id="111" junction_input="111">
+				<gates>
+					<gate id="110"/>
+				</gates>
+			</lane>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="500.0"/>
+		</speed_limits>
+	</multilane_road>
+	
+	<final_multilane_road length="1000.0">
+		<lanes>
+			<lane id="120">
+				<gates>
+					<gate id="1013"/>
+				</gates>
+			</lane>
+			<lane id="121">
+				<gates>
+					<gate id="1110"/>
+				</gates>
+			</lane>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="1000.0"/>
+		</speed_limits>
+	</final_multilane_road>
+	
+	
+	<initial_road id="200" generator="200" junction_input="200" length="1000.0">
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="1000.0"/>
+		</speed_limits>
+	</initial_road>
+	
+	<final_road id="201" length="200">
+		<gates>
+			<gate id="200"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="200.0"/>
+		</speed_limits>
+	</final_road>
+	
+	<initial_road id="300" generator="300" junction_input="300" length="100.0">
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_road>
+	
+	<road id="301" junction_input="301" length="100">
+		<gates>
+			<gate id="300301"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</road>
+	
+	<slip_road id="302" joined_road="121" join_position="300.0" 
+		length="90.0">
+		<gates>
+			<gate id="3010"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="90.0"/>
+		</speed_limits>
+	</slip_road>
+	
+	
+	<initial_road id="400" generator="400" junction_input="400" length="100.0">
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_road>
+	
+	<road id="401" junction_input="401" length="100">
+		<gates>
+			<gate id="400"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</road>
+	
+	<final_road id="102" length="200">
+		<gates>
+			<gate id="401"/>
+			<gate id="1012"/>
+		</gates>
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+			<speed_limit value="20.0" start="100.0" end="200.0"/>
+		</speed_limits>
+	</final_road>
+
+</roads>
+
+
+<routes>
+	<route id="1">
+		<road id="1"/>
+		<road id="2"/>
+		<road id="3"/>
+		<road id="4"/>
+	</route>
+	
+	<route id="2">
+		<road id="100"/>
+		<road id="101"/>
+		<road id="102"/>
+	</route>
+	
+	<route id="3">
+		<road id="400"/>
+		<road id="401"/>
+		<road id="102"/>
+	</route>
+	
+	<route id="4">
+		<road id="100"/>
+		<road id="101"/>
+		<road id="120"/>
+	</route>
+	
+	<route id="5">
+		<road id="110"/>
+		<road id="111"/>
+		<road id="121"/>
+	</route>
+
+	<route id="6">
+		<road id="110"/>
+		<road id="111"/>
+		<road id="121"/>
+		<road id="120"/>
+	</route>
+
+	<route id="7">
+		<road id="200"/>
+		<road id="201"/>
+	</route>
+	
+	<route id="8">
+		<road id="300"/>
+		<road id="301"/>
+		<road id="302"/>
+		<road id="121"/>
+	</route>
+</routes>
+
+
+<cars>
+	<car 
+		id="1"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="1"
+	/>
+	
+	<car 
+		id="2"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="2"
+	/>
+	
+	<car 
+		id="3"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="3"
+	/>
+	
+	<car 
+		id="4"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="4"
+	/>
+	
+	<car 
+		id="5"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="5"
+	/>
+	
+	<car 
+		id="6"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="6"
+	/>
+	
+	<car 
+		id="7"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="7"
+	/>
+	
+	<car 
+		id="8"
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+		route="8"
+	/>
+</cars>

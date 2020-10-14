@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{1f8b9edd-4615-4e48-8000-41b281fd6a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer">
+      <UniqueIdentifier>{3ba93c42-9fea-4d36-be35-df7cd7c8487c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\xml">
+      <UniqueIdentifier>{12730128-5911-4c67-b6f6-a513a9b5ba35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\simplified_model">
+      <UniqueIdentifier>{5a59f3e4-a932-4446-97c1-0964ca08fbe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{7fe9984c-9086-4788-b741-76f080fcc815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simplified_model">
+      <UniqueIdentifier>{19a73fec-000f-491a-bd50-b03674a0c2f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\xml">
+      <UniqueIdentifier>{14d7d63b-b468-4394-a31a-a8e872afc946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\optimizer">
+      <UniqueIdentifier>{1c2c22e2-5d43-4cdd-82dc-8ab65fc2a89f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer\algorithms">
+      <UniqueIdentifier>{1d7ce164-0d2f-41d5-9879-4b7670e52e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\optimizer\algorithms">
+      <UniqueIdentifier>{78aa4edf-1dd1-45ac-9d08-1c7db2110d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer\evaluators">
+      <UniqueIdentifier>{9abf6248-2a42-4992-8efb-b6ffe5fa6739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\optimizer\evaluators">
+      <UniqueIdentifier>{247a92d7-a7f2-44e2-89dc-f78ea5b4456c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer\recorders">
+      <UniqueIdentifier>{4b7b02ef-e2e2-4bcf-b0cf-163b4e742202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\optimizer\recorders">
+      <UniqueIdentifier>{0b1797ae-9f62-4687-bef1-96d6e450d94b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer\stop_conditions">
+      <UniqueIdentifier>{a8e276bc-d304-4acc-8882-6eb6d42a0eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimizer\utils">
+      <UniqueIdentifier>{e061d7b4-9665-4601-8492-c9204876b158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\optimizer\utils">
+      <UniqueIdentifier>{100d472d-df6a-4063-b6e6-ca09d0f1437e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\generator">
+      <UniqueIdentifier>{f5eee6e8-82ab-4541-ac62-3e1a160fc2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\junction">
+      <UniqueIdentifier>{c3f06504-5124-454b-aa2a-529495429a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\road">
+      <UniqueIdentifier>{7cc97c49-726f-43a5-84f4-78a1c3b12d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\generator">
+      <UniqueIdentifier>{1fd3f1a1-9419-4bf2-bdc3-3a31685b4097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\junction">
+      <UniqueIdentifier>{7a175c93-a387-463b-8ce5-5432ba3893ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\road">
+      <UniqueIdentifier>{a390b32d-afbd-40b7-9c58-32e478976098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\junction\gate">
+      <UniqueIdentifier>{73ed86a4-c271-439f-ab4a-7dae688ff181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\junction\lights">
+      <UniqueIdentifier>{ead7ec1c-705b-450a-b29e-a68cf901a6aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\junction\gate">
+      <UniqueIdentifier>{a25804f2-4d4b-4b12-a748-fe684af860bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\junction\lights">
+      <UniqueIdentifier>{a60387f1-6c98-4266-aed1-72147d9472ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xml\tinyxml2.h">
+      <Filter>Header Files\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\Connector.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedCar.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedGenerator.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedLights.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedLightsGroup.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedLightsSystem.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedModel.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedModelLoader.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="simplified_model\SimplifiedRoad.h">
+      <Filter>Header Files\simplified_model</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\ModelInterface.h">
+      <Filter>Header Files\optimizer</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\Optimizer.h">
+      <Filter>Header Files\optimizer</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\algorithms\Algorithm.h">
+      <Filter>Header Files\optimizer\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\algorithms\LSHADE.h">
+      <Filter>Header Files\optimizer\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\algorithms\LSHADEWGD.h">
+      <Filter>Header Files\optimizer\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\evaluators\AdditionalTimeEvaluator.h">
+      <Filter>Header Files\optimizer\evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\evaluators\AvgTimeEvaluator.h">
+      <Filter>Header Files\optimizer\evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\evaluators\Evaluator.h">
+      <Filter>Header Files\optimizer\evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\recorders\Recorder.h">
+      <Filter>Header Files\optimizer\recorders</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\recorders\StatsRecorder.h">
+      <Filter>Header Files\optimizer\recorders</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\stop_conditions\EvaluationsOptSC.h">
+      <Filter>Header Files\optimizer\stop_conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\stop_conditions\EvaluationsSC.h">
+      <Filter>Header Files\optimizer\stop_conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\stop_conditions\StopCondition.h">
+      <Filter>Header Files\optimizer\stop_conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\stop_conditions\TimeSC.h">
+      <Filter>Header Files\optimizer\stop_conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\utils\ArrayUtils.h">
+      <Filter>Header Files\optimizer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\utils\CrossoverUtils.h">
+      <Filter>Header Files\optimizer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\utils\MathUtils.h">
+      <Filter>Header Files\optimizer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\utils\MutationUtils.h">
+      <Filter>Header Files\optimizer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\utils\RandomUtils.h">
+      <Filter>Header Files\optimizer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="model\Car.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\Model.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\ModelLoader.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MovementFunctions.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\generator\Generator.h">
+      <Filter>Header Files\model\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="model\generator\UniformGenerator.h">
+      <Filter>Header Files\model\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\FinalJunctionInput.h">
+      <Filter>Header Files\model\junction</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\Junction.h">
+      <Filter>Header Files\model\junction</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\JunctionInput.h">
+      <Filter>Header Files\model\junction</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\Roundabout.h">
+      <Filter>Header Files\model\junction</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\AlwaysClosedGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\AlwaysOpenGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\CompoundGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\ConflictGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\FinalGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\Gate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\RoundaboutGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\SlipRoadGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\gate\GradeSeparatedLightsGate.h">
+      <Filter>Header Files\model\junction\gate</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\lights\Lights.h">
+      <Filter>Header Files\model\junction\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\lights\LightsGroup.h">
+      <Filter>Header Files\model\junction\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="model\junction\lights\LightsSystem.h">
+      <Filter>Header Files\model\junction\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="model\road\MultiLaneRoad.h">
+      <Filter>Header Files\model\road</Filter>
+    </ClInclude>
+    <ClInclude Include="model\road\Road.h">
+      <Filter>Header Files\model\road</Filter>
+    </ClInclude>
+    <ClInclude Include="model\road\SpeedLimit.h">
+      <Filter>Header Files\model\road</Filter>
+    </ClInclude>
+    <ClInclude Include="TrafficOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Optimization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\stop_conditions\TimeOptSC.h">
+      <Filter>Header Files\optimizer\stop_conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer\recorders\ResultOnlyRecorder.h">
+      <Filter>Header Files\optimizer\recorders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\tinyxml2.cpp">
+      <Filter>Source Files\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\Connector.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedCar.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedGenerator.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedLights.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedLightsGroup.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedLightsSystem.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedModelLoader.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedRoad.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\Optimizer.cpp">
+      <Filter>Source Files\optimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="simplified_model\SimplifiedModel.cpp">
+      <Filter>Source Files\simplified_model</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\algorithms\Algorithm.cpp">
+      <Filter>Source Files\optimizer\algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\algorithms\LSHADE.cpp">
+      <Filter>Source Files\optimizer\algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\algorithms\LSHADEWGD.cpp">
+      <Filter>Source Files\optimizer\algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\evaluators\AdditionalTimeEvaluator.cpp">
+      <Filter>Source Files\optimizer\evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\evaluators\AvgTimeEvaluator.cpp">
+      <Filter>Source Files\optimizer\evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\evaluators\Evaluator.cpp">
+      <Filter>Source Files\optimizer\evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\recorders\StatsRecorder.cpp">
+      <Filter>Source Files\optimizer\recorders</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\utils\ArrayUtils.cpp">
+      <Filter>Source Files\optimizer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\utils\CrossoverUtils.cpp">
+      <Filter>Source Files\optimizer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\utils\MathUtils.cpp">
+      <Filter>Source Files\optimizer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\utils\MutationUtils.cpp">
+      <Filter>Source Files\optimizer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\utils\RandomUtils.cpp">
+      <Filter>Source Files\optimizer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="model\Car.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\Model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\ModelLoader.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MovementFunctions.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\generator\Generator.cpp">
+      <Filter>Source Files\model\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="model\generator\UniformGenerator.cpp">
+      <Filter>Source Files\model\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\FinalJunctionInput.cpp">
+      <Filter>Source Files\model\junction</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\Junction.cpp">
+      <Filter>Source Files\model\junction</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\JunctionInput.cpp">
+      <Filter>Source Files\model\junction</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\Roundabout.cpp">
+      <Filter>Source Files\model\junction</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\CompoundGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\ConflictGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\FinalGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\Gate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\RoundaboutGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\SlipRoadGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\gate\GradeSeparatedLightsGate.cpp">
+      <Filter>Source Files\model\junction\gate</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\lights\Lights.cpp">
+      <Filter>Source Files\model\junction\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\lights\LightsGroup.cpp">
+      <Filter>Source Files\model\junction\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="model\junction\lights\LightsSystem.cpp">
+      <Filter>Source Files\model\junction\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="model\road\MultiLaneRoad.cpp">
+      <Filter>Source Files\model\road</Filter>
+    </ClCompile>
+    <ClCompile Include="model\road\Road.cpp">
+      <Filter>Source Files\model\road</Filter>
+    </ClCompile>
+    <ClCompile Include="model\road\SpeedLimit.cpp">
+      <Filter>Source Files\model\road</Filter>
+    </ClCompile>
+    <ClCompile Include="TrafficOptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Optimization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\recorders\ResultOnlyRecorder.cpp">
+      <Filter>Source Files\optimizer\recorders</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer\recorders\Recorder.cpp">
+      <Filter>Source Files\optimizer\recorders</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="model\model_file_format.xml">
+      <Filter>Header Files\model</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

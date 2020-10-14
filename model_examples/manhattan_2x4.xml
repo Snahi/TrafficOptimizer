@@ -1,0 +1,348 @@
+<!-- 
+	Optimum: 0
+	Sample optimal individual: 	25, 30, 25, 30, 25, 30, 25, 30,	25, 30, 25, 30, 25, 30, 25, 30, 0, 45, 25, 20, 35, 25, 15, 5
+	Dimensions: 24
+-->
+
+<lights_systems>
+	<!-- naming convention:
+		1 _ _ _ _
+		 |   |   |
+		   x   y
+		
+		y
+		|
+		|
+		|
+		|_ _ _ _ x
+	  0,0
+	  -->
+	<lights_system id="10000">
+		<lights id="100000"/>	
+		<lights id="100001"/>
+		<lights_group id="100000" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="100000"/>
+			</green>
+			<red>
+				<lights id="100001"/>
+			</red>
+		</lights_group>
+		<lights_group id="100001" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="100001"/>
+			</green>
+			<red>
+				<lights id="100000"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10100">
+		<lights id="101000"/>	
+		<lights id="101001"/>
+		<lights_group id="101000" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="101000"/>
+			</green>
+			<red>
+				<lights id="101001"/>
+			</red>
+		</lights_group>
+		<lights_group id="101001" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="101001"/>
+			</green>
+			<red>
+				<lights id="101000"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10200">
+		<lights id="102000"/>	
+		<lights id="102001"/>
+		<lights_group id="102000" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="102000"/>
+			</green>
+			<red>
+				<lights id="102001"/>
+			</red>
+		</lights_group>
+		<lights_group id="102001" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="102001"/>
+			</green>
+			<red>
+				<lights id="102000"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10300">
+		<lights id="103000"/>	
+		<lights id="103001"/>
+		<lights_group id="103000" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="103000"/>
+			</green>
+			<red>
+				<lights id="103001"/>
+			</red>
+		</lights_group>
+		<lights_group id="103001" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="103001"/>
+			</green>
+			<red>
+				<lights id="103000"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10001">
+		<lights id="100010"/>	
+		<lights id="100011"/>
+		<lights_group id="100010" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="100010"/>
+			</green>
+			<red>
+				<lights id="100011"/>
+			</red>
+		</lights_group>
+		<lights_group id="100011" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="100011"/>
+			</green>
+			<red>
+				<lights id="100010"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10101">
+		<lights id="101010"/>	
+		<lights id="101011"/>
+		<lights_group id="101010" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="101010"/>
+			</green>
+			<red>
+				<lights id="101011"/>
+			</red>
+		</lights_group>
+		<lights_group id="101011" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="101011"/>
+			</green>
+			<red>
+				<lights id="101010"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10201">
+		<lights id="102010"/>	
+		<lights id="102011"/>
+		<lights_group id="102010" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="102010"/>
+			</green>
+			<red>
+				<lights id="102011"/>
+			</red>
+		</lights_group>
+		<lights_group id="102011" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="102011"/>
+			</green>
+			<red>
+				<lights id="102010"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+	<lights_system id="10301">
+		<lights id="103010"/>	
+		<lights id="103011"/>
+		<lights_group id="103010" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="103010"/>
+			</green>
+			<red>
+				<lights id="103011"/>
+			</red>
+		</lights_group>
+		<lights_group id="103011" min_duration="10.0" max_duration="60.0">
+			<green>
+				<lights id="103011"/>
+			</green>
+			<red>
+				<lights id="103010"/>
+			</red>
+		</lights_group>
+	</lights_system>
+	
+</lights_systems>
+
+<roads>
+	<!-- parallel roads start with 1, perpendicular start with 2 -->
+	
+	<!-- parallel 0 -->
+	<road id="10000" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10100" lights="100000"/>
+		</connector>
+	</road>
+	<road id="10100" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10200" lights="101000"/>
+		</connector>
+	</road>
+	<road id="10200" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10300" lights="102000"/>
+		</connector>
+	</road>
+	<road id="10300" transfer_time="5.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10400" lights="103000"/>
+		</connector>
+	</road>
+	<road id="10400" transfer_time="10.0" max_cars="40"/>
+	
+	<!-- parallel 1 -->
+	<road id="10001" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10101" lights="100010"/>
+		</connector>
+	</road>
+	<road id="10101" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10201" lights="101010"/>
+		</connector>
+	</road>
+	<road id="10201" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10301" lights="102010"/>
+		</connector>
+	</road>
+	<road id="10301" transfer_time="5.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="10401" lights="103010"/>
+		</connector>
+	</road>
+	<road id="10401" transfer_time="10.0" max_cars="40"/>
+	
+	<!-- perpendicular 0 -->
+	<road id="20000" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20001" lights="100001"/>
+		</connector>
+	</road>
+	<road id="20001" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20002" lights="100011"/>
+		</connector>
+	</road>
+	<road id="20002" transfer_time="10.0" max_cars="40"/>
+	
+	<!-- perpendicular 1 -->
+	<road id="20100" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20101" lights="101001"/>
+		</connector>
+	</road>
+	<road id="20101" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20102" lights="101011"/>
+		</connector>
+	</road>
+	<road id="20102" transfer_time="10.0" max_cars="40"/>
+	
+	<!-- perpendicular 2 -->
+	<road id="20200" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20201" lights="102001"/>
+		</connector>
+	</road>
+	<road id="20201" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20202" lights="102011"/>
+		</connector>
+	</road>
+	<road id="20202" transfer_time="10.0" max_cars="40"/>
+	
+	<!-- perpendicular 3 -->
+	<road id="20300" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20301" lights="103001"/>
+		</connector>
+	</road>
+	<road id="20301" transfer_time="10.0" max_cars="40">
+		<connector delay="1.0">
+			<road_lights road="20302" lights="103011"/>
+		</connector>
+	</road>
+	<road id="20302" transfer_time="10.0" max_cars="40"/>
+</roads>
+
+<routes>
+	<!-- parallel -->
+	<route id="0">
+		<road id="10000"/>
+		<road id="10100"/>
+		<road id="10200"/>
+		<road id="10300"/>
+		<road id="10400"/>
+	</route>
+	<route id="1">
+		<road id="10001"/>
+		<road id="10101"/>
+		<road id="10201"/>
+		<road id="10301"/>
+		<road id="10401"/>
+	</route>
+	
+	<!-- perpendicular -->
+	<route id="2">
+		<road id="20000"/>
+		<road id="20001"/>
+		<road id="20002"/>
+	</route>
+	<route id="3">
+		<road id="20100"/>
+		<road id="20101"/>
+		<road id="20102"/>
+	</route>
+	<route id="4">
+		<road id="20200"/>
+		<road id="20201"/>
+		<road id="20202"/>
+	</route>
+	<route id="5">
+		<road id="20300"/>
+		<road id="20301"/>
+		<road id="20302"/>
+	</route>
+</routes>
+
+<generators>
+	<!-- parallel -->
+	<!-- route 0 -->
+	<generator period="5.0" route="0" phase="0.0"/>
+	<!-- route 1 -->
+	<generator period="7.0" route="1" phase="20.0"/>
+	<!-- perpendicular -->
+	<!-- route 2 -->
+	<generator period="10.0" route="2" phase="25.0"/>
+	<!-- route 3 -->
+	<generator period="12.0" route="3" phase="35.0"/>
+	<!-- route 4 -->
+	<generator period="6.0" route="4" phase="45.0"/>
+	<!-- route 5 -->
+	<generator period="11.0" route="5" phase="55.0"/>
+
+</generators>

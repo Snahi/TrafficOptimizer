@@ -1,0 +1,190 @@
+<!-- this section will cover all junctions, including lights systems,
+	lights groups, lights and gates connected with them -->
+<junctions>
+
+	<!-- for representing a classical junction (any junction which is not
+		a roundabout -->
+	<junction id="0">
+		<!-- all lights systems which are part of the junction must be included
+			in this section -->
+		<lights_systems>
+			<lights_system id="0">
+				<!-- create lights in this lights system -->
+				<lights id="0"/>
+				<lights id="1"/>
+				
+				<!-- create a lights group in this lights system -->
+				<lights_group id="0" duration="30.0" min_duration="20.0"
+					max_duration="60.0">
+					<!-- add all green lights here -->
+					<green>
+						<lights id="0"/>
+					</green>
+					
+					<!-- add all red lights here -->
+					<red>
+						<lights id="1"/>
+					</red>
+				</lights_group>
+			</lights_system>
+		</lights_systems>
+		
+		<!-- include all junction inputs here -->
+		<inputs>
+			<input id="0">
+				<always_open_gate id="0"/>
+				<always_closed_gate id="1"/>
+				<compound_gate id="2">
+					<!-- include component gates here - just their ids,
+						the gates must be defined before -->
+					<component_gate id="0"/>
+					<component_gate id="1"/>
+				</compound_gate>
+				<conflict_gate id="3">
+					<!-- START is the postion on the furthest conflict road
+						from which approaching cars will be taken into account.
+						If a car is before that position, then it is ignored.
+						If there is only one conflict road then it is automatically
+						set to 0.0 
+						CONFLICT_POS postion on the closest road at which the car
+						wants to cross it 
+						DURATION is how much time a car requires to cross the road
+						-->
+					<conflict start="10.0" conflict_pos="5.0" duration="4.0">
+						<!-- at least one conflict road must be specified -->
+						<conflict_road id="0"/>
+						<conflict_road id="1"/>
+					</conflict>
+				</conflict_gate>
+				
+				<lights_gate id="4" lights="0"/>
+			</input>
+			
+			<input id="1">
+				<always_open_gate id="10"/>
+			</input>
+			<input id="2">
+				<always_open_gate id="20"/>
+			</input>
+			<input id="3">
+				<always_open_gate id="30"/>
+			</input>
+			<input id="4">
+				<always_open_gate id="40"/>
+			</input>
+		</inputs>
+	</junction>
+	
+	<!-- for representing roundabouts. Ids range is shared with all 
+		junction types -->
+	<roundabout id="1" length="40.0" speed="6.0">
+		<inputs>
+			<input id="20">
+				<!-- the same as in <junction> but additonally every input
+					must contain a roundabout gate -->
+				<roundabout_gate id="5" position="30.0"/>
+			</input>
+		</inputs>
+		
+		<outputs>
+			<output position="10.0">
+				<always_open_gate id="1000"/>
+			</output>
+		</outputs>
+	</roundabout>
+</junctions>
+
+
+<generators>
+	<uniform_generator id="0" cars_per_period="10" period="100">
+		<!-- to attach more generators put them inside the previous generator.
+			The attached generators don't need any id -->
+		<uniform_generator cars_per_period="20" period="100"/>
+	</uniform_generator>
+	
+	<uniform_generator id="1" cars_per_period="20" period="100"/>
+	
+	<uniform_generator id="2" cars_per_period="20" period="100"/>
+</generators>
+
+
+<roads>
+	<road id="0" gate="0" junction_input="0" length="100.0">
+		<speed_limits>
+			<!-- speed limits must be ordered from the start to the end -->
+			<speed_limit value="14.0" start="0.0" end="70.0"/>
+			<speed_limit value="10.0" start="70.0" end="100.0"/>
+		</speed_limits>
+	</road>
+	
+	<!-- road which starts in a generator -->
+	<initial_road id="1" generator="0" junction_input="1" length="100.0">
+		<!-- speed limits -->
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_road>
+	
+	<final_road id="2" gate="1" length="100.0">
+		<!-- speed limits -->
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</final_road>
+	
+	<multilane_road length="100.0">
+		<lanes>
+			<lane id="100" gate="30" junction_input="2"/>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</multilane_road>
+	
+	<initial_multilane_road length="100.0">
+		<lanes>
+			<lane id="200" generator="1" junction_input="3"/>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</initial_multilane_road>
+	
+	<final_multilane_road length="100.0">
+		<lanes>
+			<lane id="300" gate="10"/>
+		</lanes>
+		
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="100.0"/>
+		</speed_limits>
+	</final_multilane_road>
+	
+	<slip_road id="400" gate="40" joined_road="1" join_position="50.0" 
+		length="30.0">
+		<speed_limits>
+			<speed_limit value="14.0" start="0.0" end="30.0"/>
+		</speed_limits>
+	</slip_road>
+</roads>
+
+
+<cars>
+	<car 
+		length="3.5" 
+		speed="13.89"
+		avg_gas="2.0"
+		max_gas="4.0"
+		avg_brake="-1.0"
+		strong_brake="-4.0"
+		max_brake="-6.0"
+		min_gap="2.0"
+		reaction_time="0.3"
+	>
+		<!-- specify route here -->
+		<road id="0"/>
+		<road id="1"/>
+	</car>
+</cars>
