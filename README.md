@@ -1,5 +1,5 @@
 # TrafficOptimizer
-*Copyright © 2020 Szymon Niemczyk*
+*Copyright © 2020 Szymon Niemczyk*  
 Author: **Szymon Niemczyk**  
 This is a software for traffic lights optimization. Optimization means here assigning such durations of traffic lights states (green/red) and offsets that the traffic flow is affected as little as possible. The optimization process is completely automatic once a user provides a model and optimization parameters. The methods used are based on the concept of differential evolution. The basic one is L-SHADE and the second one is L-SHADEWGD (developed by me as a modification of L-SHADE). I developed this program as a basis on which I wrote my bachelor thesis at Politechnika Wrocławska. This project was developed using Visual Studio and the Visual Studio files are also provided here so that you can easily build the project. 
 
