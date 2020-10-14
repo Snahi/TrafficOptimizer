@@ -21,4 +21,4 @@ In order to use this software you must use the Windows operating system. You can
 
 # License
 Copyright © 2020 Szymon Niemczyk
-You cannot use this program with out the author's permission.
+You cannot use this code in your own projects with no author's permission. You are allowed to use the executable program for non-commercial purposes only.
