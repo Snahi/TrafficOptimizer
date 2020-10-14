@@ -22,3 +22,7 @@ In order to use this software you must use the Windows operating system. You can
 # License
 Copyright © 2020 Szymon Niemczyk
 You cannot use this code in your own projects with no author's permission. You are allowed to use the executable program for non-commercial purposes only.
+
+# Libraries
+https://github.com/Live-Charts/Live-Charts
+https://github.com/leethomason/tinyxml2
